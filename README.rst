@@ -35,7 +35,7 @@ Library usage
 
         from tcolorpy import tcolor
 
-        print(tcolor("tcolopy example", color="#ee1177", styles=["bold","italic","underline"]))
+        print(tcolor("tcolopy example", color="#ee1177", styles=["bold", "italic", "underline"]))
 
 :Output:
     .. figure:: ss/oneline.png
