@@ -5,11 +5,11 @@ from typing import List, Optional, Sequence, Tuple, Type, Union, cast  # noqa
 from ._const import CSI, RESET, AnsiBackColor, AnsiForeColor, AnsiStyle
 
 
+RGBTuple = Tuple[int, int, int]
+
 _regexp_color_code = re.compile(
     "^#?(?P<red>[0-9a-f]{2})(?P<green>[0-9a-f]{2})(?P<blue>[0-9a-f]{2})$", re.IGNORECASE
 )
-
-RGBTuple = Tuple[int, int, int]
 
 
 class Color:
