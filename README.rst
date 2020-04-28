@@ -53,11 +53,17 @@ You can also use ``tcolorpy`` via CLI:
 
 Output examples
 --------------------------------------------
+Apply true color and styles to text:
+
 .. figure:: ss/styles.png
     :scale: 60%
-    :alt: styles
+    :alt: true_color_and_styles
 
-    Apply true color and styles
+You can also specify by color names:
+
+.. figure:: ss/ansi_colors.png
+    :scale: 60%
+    :alt: cplor_names
 
 
 Installation
