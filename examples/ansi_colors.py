@@ -6,7 +6,7 @@ from tcolorpy import AnsiBackColor, AnsiForeColor, tcolor
 
 
 def main() -> int:
-    template = "{:30} {:30} {:30}"
+    template = "{:26} {:26} {:26}"
 
     print(
         template.format(
@@ -15,7 +15,7 @@ def main() -> int:
             tcolor("invert", color="white"),
         )
     )
-    print("━" * 60)
+    print("━" * 50)
     for fg_color, bg_color in zip(AnsiForeColor, AnsiBackColor):
         print(
             template.format(
