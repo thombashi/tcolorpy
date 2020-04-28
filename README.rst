@@ -7,6 +7,18 @@ Summary
 ============================================
 tcolopy is a Python library to apply true color for terminal text.
 
+.. image:: https://badge.fury.io/py/tcolorpy.svg
+    :target: https://badge.fury.io/py/tcolorpy
+    :alt: PyPI package version
+
+.. image:: https://img.shields.io/pypi/pyversions/tcolorpy.svg
+    :target: https://pypi.org/project/tcolorpy
+    :alt: Supported Python versions
+
+.. image:: https://img.shields.io/pypi/implementation/tcolorpy.svg
+    :target: https://pypi.org/project/tcolorpy
+    :alt: Supported Python implementations
+
 .. image:: https://img.shields.io/travis/thombashi/tcolorpy/master.svg?label=Linux/macOS%20CI
     :target: https://travis-ci.org/thombashi/tcolorpy
     :alt: Linux/macOS CI status
