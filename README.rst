@@ -1,101 +1,73 @@
-.. contents:: **project_name**
+.. contents:: **tcolorpy**
    :backlinks: top
    :depth: 2
 
 
-Python lib project template: getting started
-=========================================================
-- Click ``[Use this template]`` button to create a new repository
-- Replace ``project_name`` within the repository to an arbitrary name
-    - ``./rename_to.sh <new_name>``
-- Modify authorized information at ``<project_name>/__version__.py``
-
-
-********************************************************
-
-README
-
 Summary
 ============================================
+tcolopy is a Python library to apply true color for terminal text.
 
-.. image:: https://img.shields.io/travis/thombashi/python-lib-project-template/master.svg?label=Linux/macOS%20CI
-    :target: https://travis-ci.org/thombashi/python-lib-project-template
+.. image:: https://img.shields.io/travis/thombashi/tcolorpy/master.svg?label=Linux/macOS%20CI
+    :target: https://travis-ci.org/thombashi/tcolorpy
     :alt: Linux/macOS CI status
 
-.. image:: https://img.shields.io/appveyor/ci/thombashi/python-lib-project-template/master.svg?label=Windows%20CI
-    :target: https://ci.appveyor.com/project/thombashi/python-lib-project-template/branch/master
+.. image:: https://img.shields.io/appveyor/ci/thombashi/tcolorpy/master.svg?label=Windows%20CI
+    :target: https://ci.appveyor.com/project/thombashi/tcolorpy/branch/master
     :alt: Windows CI status
 
-.. image:: https://coveralls.io/repos/github/thombashi/python-lib-project-template/badge.svg?branch=master
-    :target: https://coveralls.io/github/thombashi/python-lib-project-template?branch=master
+.. image:: https://coveralls.io/repos/github/thombashi/tcolorpy/badge.svg?branch=master
+    :target: https://coveralls.io/github/thombashi/tcolorpy?branch=master
     :alt: Test coverage: coveralls
 
-.. image:: https://codecov.io/gh/thombashi/python-lib-project-template/branch/master/graph/badge.svg
-  :target: https://codecov.io/gh/thombashi/python-lib-project-template
+.. image:: https://codecov.io/gh/thombashi/tcolorpy/branch/master/graph/badge.svg
+  :target: https://codecov.io/gh/thombashi/tcolorpy
     :alt: Test coverage: codecov
 
 
 Usage
 ============================================
 
+Library usage
+--------------------------------------------
+
 :Sample Code:
     .. code-block:: python
 
-        # Sample code
+        from tcolorpy import tcolor
+
+        print(tcolor("tcolopy example", color="#ee1177", styles=["bold","italic","underline"]))
 
 :Output:
-    .. code-block::
+    .. figure:: ss/oneline.png
+        :scale: 60%
+        :alt: oneline
 
-        # Output
+CLI usage
+--------------------------------------------
+You can also use ``tcolorpy`` via CLI:
+
+::
+
+    $ python -m tcolorpy "tcolopy example" -c "#ee1177" -s bold,italic,underline
+
+
+Output examples
+--------------------------------------------
+.. figure:: ss/styles.png
+    :scale: 60%
+    :alt: styles
+
+    Apply true color and styles
 
 
 Installation
 ============================================
 ::
 
-    pip install <project_name>
+    pip install tcolorpy
 
 
 Dependencies
 ============================================
 Python 3.5+
-
-********************************************************
-
-Development
-============================================
-
-Setup
---------------------------------------------
-::
-
-    $ make setup
-
-Running tests
---------------------------------------------
-::
-
-    $ tox
-
-Code formatting
---------------------------------------------
-::
-
-    $ make fmt
-
-Linting
---------------------------------------------
-::
-
-    $ make check
-
-Release a package to PyPI
---------------------------------------------
-::
-
-    $ make build
-    $ make release
-
-- Prerequisites for release:
-    - PyPI account
-    - GPG key
+No external dependencies.
