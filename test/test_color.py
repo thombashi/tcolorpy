@@ -5,23 +5,25 @@ from tcolorpy import Color
 
 class Test_Color:
     @pytest.mark.parametrize(
-        ["value", "expected_red", "expected_blue", "expected_green"],
+        ["value", "expected_red", "expected_blue", "expected_green", "is_color_code_src"],
         [
-            ["#000000", 0, 0, 0],
-            ["#fFfFfF", 255, 255, 255],
-            ["#01080f", 1, 8, 15],
-            ["000000", 0, 0, 0],
-            ["ffffff", 255, 255, 255],
-            ["01080f", 1, 8, 15],
-            [(0, 0, 0), 0, 0, 0],
-            [(1, 8, 15), 1, 8, 15],
+            ["#000000", 0, 0, 0, True],
+            ["#fFfFfF", 255, 255, 255, True],
+            ["#01080f", 1, 8, 15, True],
+            ["000000", 0, 0, 0, True],
+            ["ffffff", 255, 255, 255, True],
+            ["01080f", 1, 8, 15, True],
+            ["red", 0, 0, 0, True],
+            [(0, 0, 0), 0, 0, 0, False],
+            [(1, 8, 15), 1, 8, 15, False],
         ],
     )
-    def test_normal(self, value, expected_red, expected_blue, expected_green):
+    def test_normal(self, value, expected_red, expected_blue, expected_green, is_color_code_src):
         color = Color(value)
         assert color.red == expected_red
         assert color.green == expected_blue
         assert color.blue == expected_green
+        assert color.is_color_code_src == is_color_code_src
 
     @pytest.mark.parametrize(
         ["value", "expected"],

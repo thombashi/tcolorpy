@@ -14,6 +14,8 @@ RGBTuple = Tuple[int, int, int]
 
 class Color:
     def __init__(self, color: Union[str, RGBTuple]) -> None:
+        self.__is_color_code_src = False
+
         if isinstance(color, str):
             self.__from_color_code(color)
             return
@@ -28,6 +30,7 @@ class Color:
         if match is None:
             raise ValueError("invalid color code found: {}".format(color_code))
 
+        self.__is_color_code_src = True
         red, green, blue = match.group(1, 2, 3)
         self.red = int(red, 16)
         self.green = int(green, 16)
@@ -36,6 +39,10 @@ class Color:
     def __validate_color_value(self, n: int) -> None:
         if not (0 <= n <= 255):
             raise ValueError("value must be within 0-255")
+
+    @property
+    def is_color_code_src(self) -> bool:
+        return self.__is_color_code_src
 
     @property
     def color_code(self) -> str:
