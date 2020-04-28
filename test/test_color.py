@@ -1,4 +1,5 @@
 import pytest
+
 from tcolorpy import Color
 
 
