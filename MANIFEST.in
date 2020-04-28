@@ -5,7 +5,6 @@ include tox.ini
 include */py.typed
 
 recursive-include requirements *
-recursive-include ss *
 recursive-include test *
 
 global-exclude __pycache__/*
