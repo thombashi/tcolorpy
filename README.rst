@@ -75,7 +75,7 @@ You can also specify by color names:
 
 .. figure:: ss/ansi_colors.png
     :scale: 60%
-    :alt: cplor_names
+    :alt: color_names
 
 
 Installation
