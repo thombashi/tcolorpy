@@ -10,6 +10,29 @@ RGBTuple = Tuple[int, int, int]
 _regexp_color_code = re.compile(
     "^#?(?P<red>[0-9a-f]{2})(?P<green>[0-9a-f]{2})(?P<blue>[0-9a-f]{2})$", re.IGNORECASE
 )
+_regexp_normalize = re.compile(r"[\s_-]")
+name_to_rgb = {
+    "BLACK": (0, 0, 0),
+    "RED": (205, 49, 49),
+    "GREEN": (13, 188, 121),
+    "YELLOW": (229, 229, 16),
+    "BLUE": (36, 114, 200),
+    "MAGENTA": (188, 63, 188),
+    "CYAN": (17, 168, 205),
+    "WHITE": (229, 229, 229),
+    "LIGHTBLACK": (102, 102, 102),
+    "LIGHTRED": (241, 76, 76),
+    "LIGHTGREEN": (35, 209, 139),
+    "LIGHTYELLOW": (245, 245, 67),
+    "LIGHTBLUE": (59, 142, 234),
+    "LIGHTMAGENTA": (214, 112, 214),
+    "LIGHTCYAN": (41, 184, 219),
+    "LIGHTWHITE": (255, 255, 255),
+}
+
+
+def _normalize_name(name: str) -> str:
+    return _regexp_normalize.sub("", name).upper()
 
 
 class Color:
@@ -17,7 +40,12 @@ class Color:
         self.__is_color_code_src = False
 
         if isinstance(color, str):
-            self.__from_color_code(color)
+            color = _normalize_name(color)
+            try:
+                self.__from_color_name(color)
+            except KeyError:
+                self.__from_color_code(color)
+
             return
 
         self.red, self.green, self.blue = color
@@ -35,6 +63,9 @@ class Color:
         self.red = int(red, 16)
         self.green = int(green, 16)
         self.blue = int(blue, 16)
+
+    def __from_color_name(self, name: str) -> None:
+        self.red, self.green, self.blue = name_to_rgb[name]
 
     def __validate_color_value(self, n: int) -> None:
         if not (0 <= n <= 255):
@@ -59,7 +90,7 @@ def _normalize_enum(value, enum_class: Type[Enum]):
         return value
 
     try:
-        return enum_class[value.strip().upper()]
+        return enum_class[_normalize_name(value)]
     except AttributeError:
         raise TypeError("value must be a {} or a str: actual={}".format(enum_class, type(value)))
     except KeyError:

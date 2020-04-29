@@ -43,6 +43,7 @@ class Test_truecolor_bg_color:
             ["test", "#ff8822", "\x1b[48;2;255;136;34mtest\x1b[0m"],
             ["test", "ff8822", "\x1b[48;2;255;136;34mtest\x1b[0m"],
             ["test", "red", "\x1b[41mtest\x1b[0m"],
+            ["test", "light-red", "\x1b[101mtest\x1b[0m"],
             ["test", (255, 136, 34), "\x1b[48;2;255;136;34mtest\x1b[0m"],
             ["test", Color("#ff8822"), "\x1b[48;2;255;136;34mtest\x1b[0m"],
             ["test", Color((255, 136, 34)), "\x1b[48;2;255;136;34mtest\x1b[0m"],

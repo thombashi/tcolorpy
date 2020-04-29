@@ -1,6 +1,7 @@
 import pytest
 
 from tcolorpy import Color
+from tcolorpy._truecolor import name_to_rgb
 
 
 class Test_Color:
@@ -13,10 +14,13 @@ class Test_Color:
             ["000000", 0, 0, 0, True],
             ["ffffff", 255, 255, 255, True],
             ["01080f", 1, 8, 15, True],
-            ["red", 0, 0, 0, True],
+            ["light-red", *name_to_rgb["LIGHTRED"], False],
+            ["light_red", *name_to_rgb["LIGHTRED"], False],
+            ["LightRed", *name_to_rgb["LIGHTRED"], False],
             [(0, 0, 0), 0, 0, 0, False],
             [(1, 8, 15), 1, 8, 15, False],
-        ],
+        ]
+        + [[value, *rgb, False] for value, rgb in name_to_rgb.items()],
     )
     def test_normal(self, value, expected_red, expected_blue, expected_green, is_color_code_src):
         color = Color(value)
@@ -47,7 +51,7 @@ class Test_Color:
             ["", "invalid color code found"],
             ["#GGGGGG", "invalid color code found"],
             ["#afafa", "invalid color code found"],
-            ["red", "invalid color code found"],
+            ["redg", "invalid color code found"],
         ],
     )
     def test_exception_msg(self, value, expected):
