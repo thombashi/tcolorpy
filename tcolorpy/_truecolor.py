@@ -86,12 +86,12 @@ def _to_ansi_bg_truecolor(color: Color) -> str:
     return _ansi_escape("48;2;{};{};{}".format(color.red, color.green, color.blue))
 
 
-def _to_ansi_fg_color(color_name: Union[str, AnsiForeColor]) -> str:
-    return _ansi_escape("{}".format(_normalize_enum(color_name, AnsiForeColor).value))
+def _to_ansi_fg_color(color: AnsiForeColor) -> str:
+    return _ansi_escape("{}".format(color.value))
 
 
-def _to_ansi_bg_color(color_name: Union[str, AnsiBackColor]) -> str:
-    return _ansi_escape("{}".format(_normalize_enum(color_name, AnsiBackColor).value))
+def _to_ansi_bg_color(color: AnsiBackColor) -> str:
+    return _ansi_escape("{}".format(color.value))
 
 
 def _make_ansi_fg_truecolor(color: Union[Color, str, RGBTuple, AnsiForeColor, None]) -> str:
@@ -105,7 +105,7 @@ def _make_ansi_fg_truecolor(color: Union[Color, str, RGBTuple, AnsiForeColor, No
             if color[0] == "#":
                 raise
 
-            return _to_ansi_fg_color(color)
+            return _to_ansi_fg_color(_normalize_enum(color, AnsiForeColor))
     elif isinstance(color, (tuple, list)):
         c = Color(color)
     else:
@@ -125,7 +125,7 @@ def _make_ansi_bg_truecolor(color: Union[Color, str, RGBTuple, AnsiBackColor, No
             if color[0] == "#":
                 raise
 
-            return _to_ansi_bg_color(color)
+            return _to_ansi_bg_color(_normalize_enum(color, AnsiBackColor))
     elif isinstance(color, (tuple, list)):
         c = Color(color)
     else:
