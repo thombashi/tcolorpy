@@ -58,6 +58,7 @@ class Test_truecolor_fg_bg_color:
         ["string", "color", "bg_color", "expected"],
         [
             ["test", "#111111", "#ffffff", "\x1b[48;2;255;255;255m\x1b[38;2;17;17;17mtest\x1b[0m"],
+            ["test", "red", "white", "\x1b[47m\x1b[31mtest\x1b[0m"],
             ["test", None, None, "test"],
         ],
     )
