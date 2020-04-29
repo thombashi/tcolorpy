@@ -100,12 +100,10 @@ def _make_ansi_fg_truecolor(color: Union[Color, str, RGBTuple, AnsiForeColor, No
 
     if isinstance(color, str):
         try:
-            c = Color(color)
-        except ValueError:
-            if color[0] == "#":
-                raise
-
             return _to_ansi_fg_color(_normalize_enum(color, AnsiForeColor))
+        except ValueError:
+            c = Color(color)
+
     elif isinstance(color, (tuple, list)):
         c = Color(color)
     else:
@@ -120,12 +118,9 @@ def _make_ansi_bg_truecolor(color: Union[Color, str, RGBTuple, AnsiBackColor, No
 
     if isinstance(color, str):
         try:
-            c = Color(color)
-        except ValueError:
-            if color[0] == "#":
-                raise
-
             return _to_ansi_bg_color(_normalize_enum(color, AnsiBackColor))
+        except ValueError:
+            c = Color(color)
     elif isinstance(color, (tuple, list)):
         c = Color(color)
     else:
