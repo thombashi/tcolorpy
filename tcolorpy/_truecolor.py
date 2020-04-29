@@ -54,6 +54,16 @@ class Color:
         self.__validate_color_value(self.green)
         self.__validate_color_value(self.blue)
 
+    def __repr__(self) -> str:
+        items = [
+            "code={}, rgb=({}, {}, {})".format(self.color_code, self.red, self.green, self.blue)
+        ]
+
+        if self.__name:
+            items.append("name={}".format(self.__name))
+
+        return "Color({})".format(", ".join(items))
+
     def __from_color_code(self, color_code: str) -> None:
         match = _regexp_color_code.search(color_code)
         if match is None:
