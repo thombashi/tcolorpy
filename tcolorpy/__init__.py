@@ -1,7 +1,7 @@
 import platform
 
 from .__version__ import __author__, __copyright__, __email__, __license__, __version__
-from ._const import AnsiBackColor, AnsiFGColor, AnsiStyle
+from ._const import AnsiBGColor, AnsiFGColor, AnsiStyle
 from ._truecolor import Color, tcolor
 
 

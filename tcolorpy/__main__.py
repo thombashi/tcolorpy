@@ -3,7 +3,7 @@
 import argparse
 import sys
 
-from ._const import AnsiBackColor, AnsiFGColor, AnsiStyle
+from ._const import AnsiBGColor, AnsiFGColor, AnsiStyle
 from ._truecolor import tcolor
 
 
@@ -22,7 +22,7 @@ def parse_option() -> argparse.Namespace:
         "-b",
         "--bg-color",
         help="specify a background color code (#XXXXXX) or a name. valid names are: {}".format(
-            ", ".join([style.name.lower() for style in list(AnsiBackColor)])
+            ", ".join([style.name.lower() for style in list(AnsiBGColor)])
         ),
     )
     parser.add_argument(

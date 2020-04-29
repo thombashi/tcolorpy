@@ -2,7 +2,7 @@
 
 import sys
 
-from tcolorpy import AnsiBackColor, AnsiFGColor, tcolor
+from tcolorpy import AnsiBGColor, AnsiFGColor, tcolor
 
 
 def main() -> int:
@@ -16,7 +16,7 @@ def main() -> int:
         )
     )
     print("━" * 50)
-    for fg_color, bg_color in zip(AnsiFGColor, AnsiBackColor):
+    for fg_color, bg_color in zip(AnsiFGColor, AnsiBGColor):
         print(
             template.format(
                 tcolor(fg_color.name, color=fg_color),

@@ -43,7 +43,7 @@ class AnsiFGColor(Enum):
     LWHITE = 97
 
 
-class AnsiBackColor(Enum):
+class AnsiBGColor(Enum):
     BLACK = 40
     RED = 41
     GREEN = 42

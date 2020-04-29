@@ -2,7 +2,7 @@ import re
 from enum import Enum
 from typing import List, Optional, Sequence, Tuple, Type, Union, cast  # noqa
 
-from ._const import CSI, RESET, AnsiBackColor, AnsiFGColor, AnsiStyle
+from ._const import CSI, RESET, AnsiBGColor, AnsiFGColor, AnsiStyle
 
 
 RGBTuple = Tuple[int, int, int]
@@ -121,7 +121,7 @@ def _to_ansi_fg_color(color: AnsiFGColor) -> str:
     return _ansi_escape("{}".format(color.value))
 
 
-def _to_ansi_bg_color(color: AnsiBackColor) -> str:
+def _to_ansi_bg_color(color: AnsiBGColor) -> str:
     return _ansi_escape("{}".format(color.value))
 
 
@@ -143,13 +143,13 @@ def _make_ansi_fg_truecolor(color: Union[Color, str, RGBTuple, AnsiFGColor, None
     return _to_ansi_fg_truecolor(c) if c else ""
 
 
-def _make_ansi_bg_truecolor(color: Union[Color, str, RGBTuple, AnsiBackColor, None]) -> str:
-    if isinstance(color, AnsiBackColor):
+def _make_ansi_bg_truecolor(color: Union[Color, str, RGBTuple, AnsiBGColor, None]) -> str:
+    if isinstance(color, AnsiBGColor):
         return _to_ansi_bg_color(color)
 
     if isinstance(color, str):
         try:
-            return _to_ansi_bg_color(_normalize_enum(color, AnsiBackColor))
+            return _to_ansi_bg_color(_normalize_enum(color, AnsiBGColor))
         except ValueError:
             c = Color(color)
     elif isinstance(color, (tuple, list)):
@@ -163,7 +163,7 @@ def _make_ansi_bg_truecolor(color: Union[Color, str, RGBTuple, AnsiBackColor, No
 def tcolor(
     string: str,
     color: Union[Color, str, RGBTuple, AnsiFGColor, None] = None,
-    bg_color: Union[Color, str, RGBTuple, AnsiBackColor, None] = None,
+    bg_color: Union[Color, str, RGBTuple, AnsiBGColor, None] = None,
     styles: Optional[Sequence[Union[str, AnsiStyle]]] = None,
 ) -> str:
     ansi_fg_color = _make_ansi_fg_truecolor(color)

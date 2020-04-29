@@ -1,6 +1,6 @@
 import pytest
 
-from tcolorpy import AnsiBackColor, AnsiFGColor, Color, tcolor
+from tcolorpy import AnsiBGColor, AnsiFGColor, Color, tcolor
 
 
 class Test_truecolor_color:
@@ -25,7 +25,7 @@ class Test_truecolor_color:
         for color in AnsiFGColor:
             assert tcolor(string, color=color) != string
 
-        for color in AnsiBackColor:
+        for color in AnsiBGColor:
             assert tcolor(string, bg_color=color) != string
 
     @pytest.mark.parametrize(
