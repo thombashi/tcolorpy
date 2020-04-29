@@ -145,6 +145,12 @@ def _make_ansi_fg_truecolor(color: Union[Color, str, RGBTuple, AnsiFGColor, None
     if isinstance(color, AnsiFGColor):
         return _to_ansi_fg_color(color)
 
+    if isinstance(color, Color):
+        if color.name:
+            return _to_ansi_fg_color(_normalize_enum(color.name, AnsiFGColor))
+
+        return _to_ansi_fg_truecolor(color)
+
     if isinstance(color, str):
         try:
             return _to_ansi_fg_color(_normalize_enum(color, AnsiFGColor))
@@ -161,6 +167,12 @@ def _make_ansi_fg_truecolor(color: Union[Color, str, RGBTuple, AnsiFGColor, None
 def _make_ansi_bg_truecolor(color: Union[Color, str, RGBTuple, AnsiBGColor, None]) -> str:
     if isinstance(color, AnsiBGColor):
         return _to_ansi_bg_color(color)
+
+    if isinstance(color, Color):
+        if color.name:
+            return _to_ansi_bg_color(_normalize_enum(color.name, AnsiBGColor))
+
+        return _to_ansi_bg_truecolor(color)
 
     if isinstance(color, str):
         try:
