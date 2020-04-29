@@ -150,7 +150,6 @@ def _make_ansi_fg_truecolor(color: Union[Color, str, RGBTuple, AnsiFGColor, None
             return _to_ansi_fg_color(_normalize_enum(color, AnsiFGColor))
         except ValueError:
             c = Color(color)
-
     elif isinstance(color, (tuple, list)):
         c = Color(color)
     else:
