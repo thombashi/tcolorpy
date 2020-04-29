@@ -37,6 +37,7 @@ def _normalize_name(name: str) -> str:
 
 class Color:
     def __init__(self, color: Union[str, RGBTuple]) -> None:
+        self.__name = ""
         self.__is_color_code_src = False
 
         if isinstance(color, str):
@@ -66,10 +67,15 @@ class Color:
 
     def __from_color_name(self, name: str) -> None:
         self.red, self.green, self.blue = name_to_rgb[name]
+        self.__name = name
 
     def __validate_color_value(self, n: int) -> None:
         if not (0 <= n <= 255):
             raise ValueError("value must be within 0-255")
+
+    @property
+    def name(self) -> str:
+        return self.__name
 
     @property
     def is_color_code_src(self) -> bool:
