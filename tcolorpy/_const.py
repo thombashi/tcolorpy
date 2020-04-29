@@ -16,7 +16,7 @@ class AnsiStyle(Enum):
     STRIKE = 9
 
 
-class AnsiForeColor(Enum):
+class AnsiFGColor(Enum):
     BLACK = 30
     RED = 31
     GREEN = 32

@@ -1,6 +1,6 @@
 import pytest
 
-from tcolorpy import AnsiBackColor, AnsiForeColor, Color, tcolor
+from tcolorpy import AnsiBackColor, AnsiFGColor, Color, tcolor
 
 
 class Test_truecolor_color:
@@ -22,7 +22,7 @@ class Test_truecolor_color:
     def test_smoke(self):
         string = "test"
 
-        for color in AnsiForeColor:
+        for color in AnsiFGColor:
             assert tcolor(string, color=color) != string
 
         for color in AnsiBackColor:
