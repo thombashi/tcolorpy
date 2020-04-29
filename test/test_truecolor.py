@@ -1,6 +1,6 @@
 import pytest
 
-from tcolorpy import Color, tcolor
+from tcolorpy import AnsiBackColor, AnsiForeColor, Color, tcolor
 
 
 class Test_truecolor_color:
@@ -18,6 +18,15 @@ class Test_truecolor_color:
     )
     def test_normal(self, string, color, expected):
         assert tcolor(string, color=color) == expected
+
+    def test_smoke(self):
+        string = "test"
+
+        for color in AnsiForeColor:
+            assert tcolor(string, color=color) != string
+
+        for color in AnsiBackColor:
+            assert tcolor(string, bg_color=color) != string
 
     @pytest.mark.parametrize(
         ["value", "expected"], [["#fffff", ValueError], ["#GGGGGG", ValueError],],
