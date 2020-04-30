@@ -37,7 +37,7 @@ setuptools.setup(
     author_email=pkg_info["__email__"],
     description="tcolopy is a Python library to apply true color for terminal text.",
     include_package_data=True,
-    keywords=["truecolor", "ansi"],
+    keywords=["truecolor", "terminal color"],
     license=pkg_info["__license__"],
     long_description=LONG_DESCRIPTION,
     long_description_content_type="text/x-rst",
