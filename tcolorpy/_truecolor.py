@@ -40,6 +40,9 @@ class Color:
         self.__name = ""
         self.__is_color_code_src = False
 
+        if color is None:
+            raise TypeError("color must be one of Color/str/RGBTuple")
+
         if isinstance(color, str):
             color = _normalize_name(color)
             try:
