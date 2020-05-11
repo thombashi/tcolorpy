@@ -36,7 +36,7 @@ def _normalize_name(name: str) -> str:
 
 
 class Color:
-    def __init__(self, color: Union[str, RGBTuple]) -> None:
+    def __init__(self, color: Union["Color", str, RGBTuple]) -> None:
         self.__name = ""
         self.__is_color_code_src = False
 
@@ -52,10 +52,16 @@ class Color:
 
             return
 
-        self.red, self.green, self.blue = color
-        self.__validate_color_value(self.red)
-        self.__validate_color_value(self.green)
-        self.__validate_color_value(self.blue)
+        try:
+            # RGBTuple
+            self.red, self.green, self.blue = color  # type: ignore
+            self.__validate_color_value(self.red)
+            self.__validate_color_value(self.green)
+            self.__validate_color_value(self.blue)
+        except TypeError:
+            # Color
+            self.__name = color.name  # type: ignore
+            self.red, self.green, self.blue = color.red, color.green, color.blue  # type: ignore
 
     def __repr__(self) -> str:
         items = [
