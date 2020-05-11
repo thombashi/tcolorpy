@@ -2,7 +2,7 @@ import platform
 
 from .__version__ import __author__, __copyright__, __email__, __license__, __version__
 from ._const import AnsiBGColor, AnsiFGColor, AnsiStyle
-from ._truecolor import Color, tcolor, RGBTuple
+from ._truecolor import Color, RGBTuple, tcolor
 
 
 if platform.system() == "Windows":
