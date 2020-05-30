@@ -66,6 +66,8 @@ class Color:
     def __eq__(self, other) -> bool:
         if self.name and other.name:
             return self.name == other.name
+        elif self.name or other.name:
+            return False
 
         if all([self.red == other.red, self.green == other.green, self.blue == other.blue]):
             return True
