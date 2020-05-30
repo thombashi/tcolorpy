@@ -58,3 +58,15 @@ class Test_Color_constructor:
         with pytest.raises(ValueError) as e:
             Color(value)
         assert expected in str(e.value)
+
+
+class Test_Color_eq:
+    def test_normal(self):
+        black_rgb = Color("#000000")
+        red_rgb = Color("#ff0000")
+        black_name = Color("black")
+
+        assert black_rgb == black_rgb
+        assert black_name == black_name
+        assert black_rgb != red_rgb
+        assert black_rgb != black_name

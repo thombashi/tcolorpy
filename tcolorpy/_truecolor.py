@@ -63,6 +63,18 @@ class Color:
             self.__name = color.name  # type: ignore
             self.red, self.green, self.blue = color.red, color.green, color.blue  # type: ignore
 
+    def __eq__(self, other) -> bool:
+        if self.name and other.name:
+            return self.name == other.name
+
+        if all([self.red == other.red, self.green == other.green, self.blue == other.blue]):
+            return True
+
+        return False
+
+    def __ne__(self, other) -> bool:
+        return not self.__eq__(other)
+
     def __repr__(self) -> str:
         items = [
             "code={}, rgb=({}, {}, {})".format(self.color_code, self.red, self.green, self.blue)
@@ -103,6 +115,9 @@ class Color:
     @property
     def color_code(self) -> str:
         return "#{:02x}{:02x}{:02x}".format(self.red, self.green, self.blue)
+
+    def calc_scaler(self) -> int:
+        return self.red + self.green + self.blue
 
     def calc_complementary(self):
         rgb = (self.red, self.green, self.blue)
