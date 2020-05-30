@@ -4,7 +4,7 @@ from tcolorpy import Color
 from tcolorpy._truecolor import name_to_rgb
 
 
-class Test_Color:
+class Test_Color_constructor:
     @pytest.mark.parametrize(
         ["value", "expected_red", "expected_blue", "expected_green", "is_color_code_src"],
         [
