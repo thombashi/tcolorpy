@@ -53,13 +53,13 @@ class Color:
             return
 
         try:
-            # RGBTuple
+            # from a RGBTuple instance
             self.red, self.green, self.blue = color  # type: ignore
             self.__validate_color_value(self.red)
             self.__validate_color_value(self.green)
             self.__validate_color_value(self.blue)
         except TypeError:
-            # Color
+            # from a Color instance
             self.__name = color.name  # type: ignore
             self.red, self.green, self.blue = color.red, color.green, color.blue  # type: ignore
 
