@@ -137,7 +137,7 @@ def _normalize_enum(value, enum_class: Type[Enum]):
         raise TypeError("value must be a {} or a str: actual={}".format(enum_class, type(value)))
     except KeyError:
         raise ValueError(
-            "invalid valid found: expected={}, actual={}".format(
+            "invalid value found: expected={}, actual={}".format(
                 "/".join([item.name for item in enum_class]), value
             )
         )
