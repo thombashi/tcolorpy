@@ -47,6 +47,7 @@ def main() -> int:
         print(tcolor(ns.string, color=ns.color, bg_color=ns.bg_color, styles=styles))
     except ValueError as e:
         print("{}: {}".format(e.__class__.__name__, e), file=sys.stderr)
+        return 1
 
     return 0
 
