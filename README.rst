@@ -75,7 +75,7 @@ Apply true color and styles to text:
 
     `tcolorpy/ansi_styles.py <https://github.com/thombashi/tcolorpy/blob/master/examples/ansi_styles.py>`__
 
-You can also specify by color names:
+You can also specify colors by names:
 
 .. figure:: ss/ansi_colors.png
     :scale: 60%
@@ -86,7 +86,7 @@ You can also specify by color names:
 
 CLI usage
 --------------------------------------------
-You can also use ``tcolorpy`` via CLI:
+``tcolorpy`` can be used via CLI:
 
 ::
 
