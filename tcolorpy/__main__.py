@@ -32,6 +32,9 @@ def parse_option() -> argparse.Namespace:
             ", ".join([style.name.lower() for style in list(AnsiStyle)])
         ),
     )
+    parser.add_argument(
+        "--encode", help="output a text encoded with the specified encoding",
+    )
 
     return parser.parse_args()
 
@@ -44,10 +47,15 @@ def main() -> int:
         styles = [style for style in ns.styles.split(",")]
 
     try:
-        print(tcolor(ns.string, color=ns.color, bg_color=ns.bg_color, styles=styles))
+        ansi_string = tcolor(ns.string, color=ns.color, bg_color=ns.bg_color, styles=styles)
     except ValueError as e:
         print("{}: {}".format(e.__class__.__name__, e), file=sys.stderr)
         return 1
+
+    if ns.encode:
+        ansi_string = ansi_string.encode(ns.encode)  # type: ignore
+
+    print(ansi_string)
 
     return 0
 
