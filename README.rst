@@ -53,9 +53,9 @@ Library usage
         print(tcolor("tcolopy example", color="#ee1177", styles=["bold", "italic", "underline"]))
 
 :Output:
-    .. figure:: ss/oneline.png
+    .. figure:: https://cdn.jsdelivr.net/gh/thombashi/tcolorpy@master/ss/oneline.png
         :scale: 60%
-        :alt: oneline
+        :alt: https://github.com/thombashi/tcolorpy/blob/master/ss/oneline.png
 
 You can set the following ``tcolor`` arguments:
 
@@ -69,17 +69,17 @@ Other examples
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Apply true color and styles to text:
 
-.. figure:: ss/styles.png
+.. figure:: https://cdn.jsdelivr.net/gh/thombashi/tcolorpy@master/ss/styles.png
     :scale: 60%
-    :alt: true_color_and_styles
+    :alt: https://github.com/thombashi/tcolorpy/blob/master/ss/styles.png
 
     `tcolorpy/ansi_styles.py <https://github.com/thombashi/tcolorpy/blob/master/examples/ansi_styles.py>`__
 
 You can also specify colors by names:
 
-.. figure:: ss/ansi_colors.png
+.. figure:: https://cdn.jsdelivr.net/gh/thombashi/tcolorpy@master/ss/ansi_colors.png
     :scale: 60%
-    :alt: color_names
+    :alt: https://github.com/thombashi/tcolorpy/blob/master/ss/ansi_colors.png
 
     `tcolorpy/ansi_colors.py <https://github.com/thombashi/tcolorpy/blob/master/examples/ansi_colors.py>`__
 
