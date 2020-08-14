@@ -1,6 +1,6 @@
 include LICENSE
 include README.rst
-include setup.cfg
+include pyproject.toml
 include tox.ini
 include */py.typed
 
