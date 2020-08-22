@@ -11,6 +11,10 @@ tcolopy is a Python library to apply true color for terminal text.
     :target: https://badge.fury.io/py/tcolorpy
     :alt: PyPI package version
 
+.. image:: https://anaconda.org/conda-forge/tcolorpy/badges/version.svg
+    :target: https://anaconda.org/conda-forge/tcolorpy
+    :alt: conda-forge package version
+
 .. image:: https://img.shields.io/pypi/pyversions/tcolorpy.svg
     :target: https://pypi.org/project/tcolorpy
     :alt: Supported Python versions
@@ -34,9 +38,18 @@ tcolopy is a Python library to apply true color for terminal text.
 
 Installation
 ============================================
+
+Installation: pip
+------------------------------
 ::
 
     pip install tcolorpy
+
+Installation: conda
+------------------------------
+::
+
+    conda install -c conda-forge tcolorpy
 
 
 Usage
