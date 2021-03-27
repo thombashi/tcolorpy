@@ -33,7 +33,8 @@ def parse_option() -> argparse.Namespace:
         ),
     )
     parser.add_argument(
-        "--encode", help="output a text encoded with the specified encoding",
+        "--encode",
+        help="output a text encoded with the specified encoding",
     )
 
     return parser.parse_args()

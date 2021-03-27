@@ -30,7 +30,11 @@ class Test_truecolor_color:
             assert tcolor(string, bg_color=color) != string
 
     @pytest.mark.parametrize(
-        ["value", "expected"], [["#fffff", ValueError], ["#GGGGGG", ValueError],],
+        ["value", "expected"],
+        [
+            ["#fffff", ValueError],
+            ["#GGGGGG", ValueError],
+        ],
     )
     def test_exception(self, value, expected):
         with pytest.raises(expected):
