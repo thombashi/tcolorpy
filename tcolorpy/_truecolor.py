@@ -84,19 +84,17 @@ class Color:
         return not self.__eq__(other)
 
     def __repr__(self) -> str:
-        items = [
-            "code={}, rgb=({}, {}, {})".format(self.color_code, self.red, self.green, self.blue)
-        ]
+        items = [f"code={self.color_code}, rgb=({self.red}, {self.green}, {self.blue})"]
 
         if self.__name:
-            items.append("name={}".format(self.__name))
+            items.append(f"name={self.__name}")
 
         return "Color({})".format(", ".join(items))
 
     def __from_color_code(self, color_code: str) -> None:
         match = _regexp_color_code.search(color_code)
         if match is None:
-            raise ValueError("invalid color code found: {}".format(color_code))
+            raise ValueError(f"invalid color code found: {color_code}")
 
         self.__is_color_code_src = True
         red, green, blue = match.group(1, 2, 3)
@@ -122,7 +120,7 @@ class Color:
 
     @property
     def color_code(self) -> str:
-        return "#{:02x}{:02x}{:02x}".format(self.red, self.green, self.blue)
+        return f"#{self.red:02x}{self.green:02x}{self.blue:02x}"
 
     @property
     def hsv(self) -> HSV:
@@ -147,7 +145,7 @@ def _normalize_enum(value, enum_class: Type[Enum]):
     try:
         return enum_class[_normalize_name(value)]
     except AttributeError:
-        raise TypeError("value must be a {} or a str: actual={}".format(enum_class, type(value)))
+        raise TypeError(f"value must be a {enum_class} or a str: actual={type(value)}")
     except KeyError:
         raise ValueError(
             "invalid value found: expected={}, actual={}".format(
@@ -157,27 +155,27 @@ def _normalize_enum(value, enum_class: Type[Enum]):
 
 
 def _ansi_escape(value: str) -> str:
-    return "{}{}m".format(CSI, value)
+    return f"{CSI}{value}m"
 
 
 def _to_ansi_style(style: Union[str, AnsiStyle]) -> str:
-    return _ansi_escape("{}".format(_normalize_enum(style, AnsiStyle).value))
+    return _ansi_escape(f"{_normalize_enum(style, AnsiStyle).value}")
 
 
 def _to_ansi_fg_truecolor(color: Color) -> str:
-    return _ansi_escape("38;2;{};{};{}".format(color.red, color.green, color.blue))
+    return _ansi_escape(f"38;2;{color.red};{color.green};{color.blue}")
 
 
 def _to_ansi_bg_truecolor(color: Color) -> str:
-    return _ansi_escape("48;2;{};{};{}".format(color.red, color.green, color.blue))
+    return _ansi_escape(f"48;2;{color.red};{color.green};{color.blue}")
 
 
 def _to_ansi_fg_color(color: AnsiFGColor) -> str:
-    return _ansi_escape("{}".format(color.value))
+    return _ansi_escape(f"{color.value}")
 
 
 def _to_ansi_bg_color(color: AnsiBGColor) -> str:
-    return _ansi_escape("{}".format(color.value))
+    return _ansi_escape(f"{color.value}")
 
 
 def _make_ansi_fg_truecolor(color: Union[Color, str, RGBTuple, AnsiFGColor, None]) -> str:
