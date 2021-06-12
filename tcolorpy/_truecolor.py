@@ -1,4 +1,6 @@
 import re
+from collections import namedtuple
+from colorsys import rgb_to_hsv
 from enum import Enum
 from typing import List, Optional, Sequence, Tuple, Type, Union, cast  # noqa
 
@@ -6,6 +8,8 @@ from ._const import CSI, RESET, AnsiBGColor, AnsiFGColor, AnsiStyle
 
 
 RGBTuple = Tuple[int, int, int]
+
+HSV = namedtuple("HSV", "hue saturation value")
 
 _regexp_color_code = re.compile(
     "^#?(?P<red>[0-9a-f]{2})(?P<green>[0-9a-f]{2})(?P<blue>[0-9a-f]{2})$", re.IGNORECASE
@@ -63,6 +67,8 @@ class Color:
             self.__name = color.name  # type: ignore
             self.red, self.green, self.blue = color.red, color.green, color.blue  # type: ignore
 
+        self.__hsv = None  # type: Optional[HSV]
+
     def __eq__(self, other) -> bool:
         if self.name and other.name:
             return self.name == other.name
@@ -117,6 +123,13 @@ class Color:
     @property
     def color_code(self) -> str:
         return "#{:02x}{:02x}{:02x}".format(self.red, self.green, self.blue)
+
+    @property
+    def hsv(self) -> HSV:
+        if self.__hsv is None:
+            self.__hsv = HSV(*rgb_to_hsv(self.red / 255, self.green / 255, self.blue / 255))
+
+        return self.__hsv
 
     def calc_scaler(self) -> int:
         return self.red + self.green + self.blue
