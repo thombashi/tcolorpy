@@ -55,9 +55,9 @@ class Color:
         try:
             # from a RGBTuple instance
             self.red, self.green, self.blue = color  # type: ignore
-            self.__validate_color_value(self.red)
-            self.__validate_color_value(self.green)
-            self.__validate_color_value(self.blue)
+            self.__validate_rgb_value(self.red)
+            self.__validate_rgb_value(self.green)
+            self.__validate_rgb_value(self.blue)
         except TypeError:
             # from a Color instance
             self.__name = color.name  # type: ignore
@@ -102,7 +102,7 @@ class Color:
         self.red, self.green, self.blue = name_to_rgb[name]
         self.__name = name
 
-    def __validate_color_value(self, n: int) -> None:
+    def __validate_rgb_value(self, n: int) -> None:
         if not (0 <= n <= 255):
             raise ValueError("value must be within 0-255")
 
