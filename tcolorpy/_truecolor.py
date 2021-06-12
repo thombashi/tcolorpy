@@ -67,7 +67,7 @@ class Color:
             self.__name = color.name  # type: ignore
             self.red, self.green, self.blue = color.red, color.green, color.blue  # type: ignore
 
-        self.__hsv = None  # type: Optional[HSV]
+        self.__hsv: Optional[HSV] = None
 
     def __eq__(self, other) -> bool:
         if self.name and other.name:
@@ -233,7 +233,7 @@ def tcolor(
     ansi_fg_color = _make_ansi_fg_truecolor(color)
     ansi_bg_color = _make_ansi_bg_truecolor(bg_color)
 
-    ansi_styles = []  # type: List[str]
+    ansi_styles: List[str] = []
     if styles:
         ansi_styles = [_to_ansi_style(style) for style in styles]
 
