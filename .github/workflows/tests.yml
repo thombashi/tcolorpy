@@ -37,13 +37,13 @@ jobs:
         run: |
           python -m pip install --upgrade tox
 
-      - name: Run tox
+      - name: Run tests
         run: |
           tox -e cov
         env:
           PYTEST_DISCORD_WEBHOOK: ${{ secrets.PYTEST_DISCORD_WEBHOOK }}
 
-      - name: Coverage report
+      - name: Upload coverage report
         run: |
           python -m pip install --upgrade coveralls
           coveralls --service=github
