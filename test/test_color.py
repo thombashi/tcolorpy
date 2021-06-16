@@ -70,3 +70,17 @@ class Test_Color_eq:
         assert black_name == black_name
         assert black_rgb != red_rgb
         assert black_rgb != black_name
+
+
+class Test_Color_hsv:
+    @pytest.mark.parametrize(
+        ["value", "expected"],
+        [
+            ["#ffffff", (0.0, 0.0, 1)],
+            [(255, 255, 255), (0.0, 0.0, 1)],
+            ["black", (0.0, 0.0, 0.0)],
+            ["red", (0.0, 0.7609756097560976, 0.803921568627451)],
+        ],
+    )
+    def test_normal(self, value, expected):
+        assert Color(value).hsv == expected

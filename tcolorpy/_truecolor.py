@@ -43,6 +43,7 @@ class Color:
     def __init__(self, color: Union["Color", str, RGBTuple]) -> None:
         self.__name = ""
         self.__is_color_code_src = False
+        self.__hsv: Optional[HSV] = None
 
         if color is None:
             raise TypeError("color must be one of Color/str/RGBTuple")
@@ -66,8 +67,6 @@ class Color:
             # from a Color instance
             self.__name = color.name  # type: ignore
             self.red, self.green, self.blue = color.red, color.green, color.blue  # type: ignore
-
-        self.__hsv: Optional[HSV] = None
 
     def __eq__(self, other) -> bool:
         if self.name and other.name:
