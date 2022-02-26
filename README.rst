@@ -82,7 +82,7 @@ Apply true color and styles to text:
     :scale: 60%
     :alt: https://github.com/thombashi/tcolorpy/blob/master/ss/styles.png
 
-    `tcolorpy/ansi_styles.py <https://github.com/thombashi/tcolorpy/blob/master/examples/ansi_styles.py>`__
+    `example source code <https://github.com/thombashi/tcolorpy/blob/master/examples/ansi_styles.py>`__
 
 You can also specify colors by names:
 
@@ -90,7 +90,7 @@ You can also specify colors by names:
     :scale: 60%
     :alt: https://github.com/thombashi/tcolorpy/blob/master/ss/ansi_colors.png
 
-    `tcolorpy/ansi_colors.py <https://github.com/thombashi/tcolorpy/blob/master/examples/ansi_colors.py>`__
+    `example source code <https://github.com/thombashi/tcolorpy/blob/master/examples/ansi_colors.py>`__
 
 
 CLI usage
@@ -99,7 +99,7 @@ CLI usage
 
 ::
 
-    $ python -m tcolorpy "tcolopy example" -c "#ee1177" -s bold,italic,underline
+    $ python3 -m tcolorpy "tcolopy example" -c "#ee1177" -s bold,italic,underline
 
 Command help
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -133,4 +133,4 @@ Command help
 Dependencies
 ============================================
 Python 3.6+
-No external dependencies.
+no external dependencies.
