@@ -22,7 +22,7 @@ def main() -> int:
     step = 32
 
     print(
-        "bg_color  {color}     {bold}      {dim}       {italic}    {underline} {invert}    {strike}".format(
+        "bg_color  {color}     {bold}      {dim}       {italic}    {underline} {invert}    {strike}".format(  # noqa
             color="color",
             bold=tcolor("bold", styles=["bold"]),
             dim=tcolor("dim", styles=["dim"]),
