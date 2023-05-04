@@ -69,7 +69,7 @@ Library usage
 You can set the following ``tcolor`` arguments:
 
 - ``color``/``bg_color``
-    - color names (``"red"``, ``"red"``, etc.) or color code (``"#RRGGBB"``)
+    - color names (``"red"``, ``"green"``, etc.) or color code (``"#RRGGBB"``)
 - ``styles``
     - ``"bold"``, ``"italic"``, etc.
 
@@ -84,7 +84,7 @@ Apply true color and styles to text:
 
     `example source code <https://github.com/thombashi/tcolorpy/blob/master/examples/ansi_styles.py>`__
 
-You can also specify colors by names:
+You can also specify colors by name:
 
 .. figure:: https://cdn.jsdelivr.net/gh/thombashi/tcolorpy@master/ss/ansi_colors.png
     :scale: 60%
@@ -105,28 +105,19 @@ Command help
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ::
 
-    usage: __main__.py [-h] [-c COLOR] [-b BG_COLOR] [-s STYLES] [--encode ENCODE]
-                       string
+    usage: __main__.py [-h] [-c COLOR] [-b BG_COLOR] [-s STYLES] [--encode ENCODE] string
 
     positional arguments:
       string                string to apply styles.
 
-    optional arguments:
+    options:
       -h, --help            show this help message and exit
       -c COLOR, --color COLOR
-                            specify a color code (#XXXXXX) or a name. valid names
-                            are: black, red, green, yellow, blue, magenta, cyan,
-                            white, lightblack, lightred, lightgreen, lightyellow,
-                            lightblue, lightmagenta, lightcyan, lightwhite
+                            specify a color code (#XXXXXX) or a name. valid names are: black, red, green, yellow, blue, magenta, cyan, white, lightblack, lightred, lightgreen, lightyellow, lightblue, lightmagenta, lightcyan, lightwhite
       -b BG_COLOR, --bg-color BG_COLOR
-                            specify a background color code (#XXXXXX) or a name.
-                            valid names are: black, red, green, yellow, blue,
-                            magenta, cyan, white, lightblack, lightred,
-                            lightgreen, lightyellow, lightblue, lightmagenta,
-                            lightcyan, lightwhite
+                            specify a background color code (#XXXXXX) or a name. valid names are: black, red, green, yellow, blue, magenta, cyan, white, lightblack, lightred, lightgreen, lightyellow, lightblue, lightmagenta, lightcyan, lightwhite
       -s STYLES, --styles STYLES
-                            specify a comma separated styles. valid values are:
-                            bold, dim, italic, underline, blink, invert, strike
+                            specify a comma-separated style. valid values are: bold, dim, italic, underline, blink, invert, strike
       --encode ENCODE       output a text encoded with the specified encoding
 
 
