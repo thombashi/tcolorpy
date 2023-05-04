@@ -26,7 +26,7 @@ def parse_option() -> argparse.Namespace:
     parser.add_argument(
         "-s",
         "--styles",
-        help="specify a comma separated styles. valid values are: {}".format(
+        help="specify a comma-separated style. valid values are: {}".format(
             ", ".join([style.name.lower() for style in list(AnsiStyle)])
         ),
     )
