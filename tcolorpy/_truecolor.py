@@ -2,7 +2,7 @@ import re
 from collections import namedtuple
 from colorsys import rgb_to_hsv
 from enum import Enum
-from typing import List, Optional, Sequence, Tuple, Type, Union, cast  # noqa
+from typing import Any, List, Optional, Sequence, Tuple, Type, Union, cast  # noqa
 
 from ._const import CSI, RESET, AnsiBGColor, AnsiFGColor, AnsiStyle
 
@@ -68,7 +68,10 @@ class Color:
             self.__name = color.name  # type: ignore
             self.red, self.green, self.blue = color.red, color.green, color.blue  # type: ignore
 
-    def __eq__(self, other) -> bool:
+    def __eq__(self, other: Any) -> bool:
+        if not isinstance(other, Color):
+            return False
+
         if self.name and other.name:
             return self.name == other.name
         elif self.name or other.name:
@@ -79,7 +82,10 @@ class Color:
 
         return False
 
-    def __ne__(self, other) -> bool:
+    def __ne__(self, other: Any) -> bool:
+        if not isinstance(other, Color):
+            return True
+
         return not self.__eq__(other)
 
     def __repr__(self) -> str:
@@ -131,13 +137,13 @@ class Color:
     def calc_scaler(self) -> int:
         return self.red + self.green + self.blue
 
-    def calc_complementary(self):
+    def calc_complementary(self) -> "Color":
         rgb = (self.red, self.green, self.blue)
         n = max(rgb) + min(rgb)
         return Color((n - self.red, n - self.green, n - self.blue))
 
 
-def _normalize_enum(value, enum_class: Type[Enum]):
+def _normalize_enum(value: Any, enum_class: Type[Enum]) -> Any:
     if isinstance(value, enum_class):
         return value
 
