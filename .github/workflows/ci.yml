@@ -52,6 +52,31 @@ jobs:
           name: dist
           path: ./dist/*
 
+  publish-package:
+    needs: build-package
+    runs-on: ubuntu-latest
+    concurrency:
+      group: ${{ github.event_name }}-${{ github.workflow }}-${{ github.ref_name }}-publish-pkg
+      cancel-in-progress: true
+    timeout-minutes: 20
+    environment:
+      name: testpypi
+      url: https://pypi.org/p/tcolorpy
+    permissions:
+      id-token: write  # IMPORTANT: this permission is mandatory for trusted publishing
+
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: ./dist
+
+      - name: Publish package to TestPyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          repository-url: https://test.pypi.org/legacy/
+          skip-existing: true
+
   lint:
     runs-on: ubuntu-latest
     concurrency:
