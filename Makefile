@@ -44,7 +44,8 @@ fmt:
 
 .PHONY: release
 release:
-	cd $(PKG_BUILD_DIR) && $(PYTHON) setup.py release --sign --skip-uploading --verbose
+	$(PYTHON) -m pip install -q --disable-pip-version-check --upgrade releasecmd setuptools
+	$(PYTHON) setup.py release --sign --skip-uploading --verbose
 	$(MAKE) clean
 
 .PHONY: setup-ci
@@ -54,7 +55,7 @@ setup-ci:
 
 .PHONY: setup
 setup: setup-ci
-	$(PYTHON) -m pip install -q --disable-pip-version-check --upgrade -e .[test] releasecmd
+	$(PYTHON) -m pip install -q --disable-pip-version-check --upgrade -e .[test]
 	$(PYTHON) -m pip check
 
 .PHONY: test
