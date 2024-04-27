@@ -9,8 +9,6 @@ on:
       - "README.rst"
       - "ss/*"
   pull_request:
-    # branches-ignore:
-    #   - master
     paths-ignore:
       - ".gitignore"
       - "README.rst"
@@ -158,19 +156,18 @@ jobs:
             **/*requirements.txt
             tox.ini
 
-      - name: Install pip
+      - name: Upgrade pip
         run: python -m pip install --upgrade --disable-pip-version-check pip
 
       - run: make setup-ci
 
       - name: Run tests
-        run: |
-          tox -e cov
+        run: tox -e cov
         env:
           PYTEST_DISCORD_WEBHOOK: ${{ secrets.PYTEST_DISCORD_WEBHOOK }}
 
       - name: Upload coverage report
-        if: matrix.os == 'ubuntu-latest' && matrix.python-version == '3.8'
+        if: matrix.os == 'ubuntu-latest' && matrix.python-version == '3.11'
         run: |
           python -m pip install --upgrade --disable-pip-version-check coveralls tomli
           coveralls --service=github
