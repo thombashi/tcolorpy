@@ -100,7 +100,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: sigstore
-          path: ./dist/*.sigstore
+          path: ./dist/*
 
   lint:
     runs-on: ubuntu-latest
