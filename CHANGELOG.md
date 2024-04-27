@@ -1,3 +1,32 @@
+<a name="v0.1.6"></a>
+# [v0.1.6](https://github.com/thombashi/tcolorpy/releases/tag/v0.1.6) - 27 Apr 2024
+
+* Fix the package release
+
+**Full Changelog**: https://github.com/thombashi/tcolorpy/compare/v0.1.5...v0.1.6
+
+[Changes][v0.1.6]
+
+
+<a name="v0.1.5"></a>
+# [v0.1.5](https://github.com/thombashi/tcolorpy/releases/tag/v0.1.5) - 27 Apr 2024
+
+## What's Changed
+* Bump actions/setup-python from 4 to 5 in the actions-dependencies group by [@dependabot](https://github.com/dependabot) in https://github.com/thombashi/tcolorpy/pull/4
+* Update CI by [@thombashi](https://github.com/thombashi) in https://github.com/thombashi/tcolorpy/pull/5
+* Add `__all__` to `__init__.py`
+* Add support for Python 3.12
+* Add CHANGELOG.md
+* Modify to use `setuptools_scm` for package build
+
+## New Contributors
+* [@dependabot](https://github.com/dependabot) made their first contribution in https://github.com/thombashi/tcolorpy/pull/4
+
+**Full Changelog**: https://github.com/thombashi/tcolorpy/compare/v0.1.4...v0.1.5
+
+[Changes][v0.1.5]
+
+
 <a name="v0.1.4"></a>
 # [v0.1.4](https://github.com/thombashi/tcolorpy/releases/tag/v0.1.4) - 16 Sep 2023
 
@@ -48,6 +77,8 @@
 [Changes][v0.1.0]
 
 
+[v0.1.6]: https://github.com/thombashi/tcolorpy/compare/v0.1.5...v0.1.6
+[v0.1.5]: https://github.com/thombashi/tcolorpy/compare/v0.1.4...v0.1.5
 [v0.1.4]: https://github.com/thombashi/tcolorpy/compare/v0.1.3...v0.1.4
 [v0.1.3]: https://github.com/thombashi/tcolorpy/compare/v0.1.2...v0.1.3
 [v0.1.2]: https://github.com/thombashi/tcolorpy/compare/v0.1.0...v0.1.2
