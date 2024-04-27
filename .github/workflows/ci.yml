@@ -9,8 +9,8 @@ on:
       - "README.rst"
       - "ss/*"
   pull_request:
-    branches-ignore:
-      - master
+    # branches-ignore:
+    #   - master
     paths-ignore:
       - ".gitignore"
       - "README.rst"
@@ -26,13 +26,31 @@ jobs:
       group: ${{ github.event_name }}-${{ github.workflow }}-${{ github.ref_name }}-build
       cancel-in-progress: true
     timeout-minutes: 20
-    container:
-      image: ghcr.io/thombashi/python-ci:3.11
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          fetch-tags: true
+
+      - name: Setup Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: |
+            setup.py
+            **/*requirements.txt
+            tox.ini
+
+      - run: make setup-ci
 
       - run: make build
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: ./dist/*
 
   lint:
     runs-on: ubuntu-latest
