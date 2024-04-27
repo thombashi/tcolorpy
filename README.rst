@@ -7,27 +7,33 @@ Summary
 ============================================
 tcolopy is a Python library to apply true color for terminal text.
 
-.. image:: https://badge.fury.io/py/tcolorpy.svg
+|PyPI pkg ver| |conda pkg ver| |Supported Python implementations| |Supported Python versions| |CI status| |CodeQL| |coverage|
+
+.. |PyPI pkg ver| image:: https://badge.fury.io/py/tcolorpy.svg
     :target: https://badge.fury.io/py/tcolorpy
     :alt: PyPI package version
 
-.. image:: https://anaconda.org/conda-forge/tcolorpy/badges/version.svg
+.. |conda pkg ver| image:: https://anaconda.org/conda-forge/tcolorpy/badges/version.svg
     :target: https://anaconda.org/conda-forge/tcolorpy
     :alt: conda-forge package version
 
-.. image:: https://img.shields.io/pypi/pyversions/tcolorpy.svg
-    :target: https://pypi.org/project/tcolorpy
-    :alt: Supported Python versions
-
-.. image:: https://img.shields.io/pypi/implementation/tcolorpy.svg
+.. |Supported Python implementations| image:: https://img.shields.io/pypi/implementation/tcolorpy.svg
     :target: https://pypi.org/project/tcolorpy
     :alt: Supported Python implementations
 
-.. image:: https://github.com/thombashi/tcolorpy/workflows/Tests/badge.svg
-    :target: https://github.com/thombashi/tcolorpy/actions?query=workflow%3ATests
-    :alt: Linux/macOS/Windows CI status
+.. |Supported Python versions| image:: https://img.shields.io/pypi/pyversions/tcolorpy.svg
+    :target: https://pypi.org/project/tcolorpy
+    :alt: Supported Python versions
 
-.. image:: https://coveralls.io/repos/github/thombashi/tcolorpy/badge.svg?branch=master
+.. |CI status| image:: https://github.com/thombashi/tcolorpy/actions/workflows/ci.yml/badge.svg
+    :target: https://github.com/thombashi/tcolorpy/actions/workflows/ci.yml
+    :alt: CI status of Linux/macOS/Windows
+
+.. |CodeQL| image:: https://github.com/thombashi/tcolorpy/actions/workflows/github-code-scanning/codeql/badge.svg
+    :target: https://github.com/thombashi/tcolorpy/actions/workflows/github-code-scanning/codeql
+    :alt: CodeQL
+
+.. |coverage| image:: https://coveralls.io/repos/github/thombashi/tcolorpy/badge.svg?branch=master
     :target: https://coveralls.io/github/thombashi/tcolorpy?branch=master
     :alt: Test coverage: coveralls
 
