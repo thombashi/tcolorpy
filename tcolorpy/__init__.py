@@ -5,6 +5,21 @@ from ._const import AnsiBGColor, AnsiFGColor, AnsiStyle
 from ._truecolor import Color, RGBTuple, tcolor
 
 
+__all__ = (
+    "__author__",
+    "__email__",
+    "__license__",
+    "__version__",
+    "__copyright__",
+    "AnsiBGColor",
+    "AnsiFGColor",
+    "AnsiStyle",
+    "Color",
+    "RGBTuple",
+    "tcolor",
+)
+
+
 if platform.system() == "Windows":
     from ctypes import windll  # type: ignore
 
