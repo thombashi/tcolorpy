@@ -1,6 +1,20 @@
 name: CI
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - ".gitignore"
+      - "README.rst"
+      - "ss/*"
+  pull_request:
+    branches-ignore:
+      - master
+    paths-ignore:
+      - ".gitignore"
+      - "README.rst"
+      - "ss/*"
 
 jobs:
   build-package:
