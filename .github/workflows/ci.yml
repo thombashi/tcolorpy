@@ -16,6 +16,9 @@ on:
       - "README.rst"
       - "ss/*"
 
+permissions:
+  contents: read
+
 jobs:
   build-package:
     runs-on: ubuntu-latest
