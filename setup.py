@@ -43,7 +43,7 @@ setuptools.setup(
     packages=setuptools.find_packages(exclude=["test*"]),
     package_data={MODULE_NAME: ["py.typed"]},
     project_urls={
-        "Changlog": f"{REPOSITORY_URL:s}/blob/master/CHANGELOG.md",
+        "Changelog": f"{REPOSITORY_URL:s}/blob/master/CHANGELOG.md",
         "Source": REPOSITORY_URL,
         "Tracker": f"{REPOSITORY_URL:s}/issues",
     },
