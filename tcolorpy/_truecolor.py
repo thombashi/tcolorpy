@@ -1,13 +1,14 @@
 import re
 from collections import namedtuple
+from collections.abc import Sequence
 from colorsys import rgb_to_hsv
 from enum import Enum
-from typing import Any, List, Optional, Sequence, Tuple, Type, Union, cast  # noqa
+from typing import Any, Optional, Union
 
 from ._const import CSI, RESET, AnsiBGColor, AnsiFGColor, AnsiStyle
 
 
-RGBTuple = Tuple[int, int, int]
+RGBTuple = tuple[int, int, int]
 
 HSV = namedtuple("HSV", "hue saturation value")
 
@@ -143,7 +144,7 @@ class Color:
         return Color((n - self.red, n - self.green, n - self.blue))
 
 
-def _normalize_enum(value: Any, enum_class: Type[Enum]) -> Any:
+def _normalize_enum(value: Any, enum_class: type[Enum]) -> Any:
     if isinstance(value, enum_class):
         return value
 
@@ -238,7 +239,7 @@ def tcolor(
     ansi_fg_color = _make_ansi_fg_truecolor(color)
     ansi_bg_color = _make_ansi_bg_truecolor(bg_color)
 
-    ansi_styles: List[str] = []
+    ansi_styles: list[str] = []
     if styles:
         ansi_styles = [_to_ansi_style(style) for style in styles]
 
