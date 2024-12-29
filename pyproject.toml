@@ -40,7 +40,6 @@ exclude_lines = [
   'pass',
   'ABCmeta',
   'abstractmethod',
-  'abstractclassmethod',
   'warnings.warn',
 ]
 precision = 1
