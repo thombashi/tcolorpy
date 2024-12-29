@@ -48,8 +48,7 @@ fmt:
 
 .PHONY: release
 release:
-	$(PYTHON) -m pip install -q --disable-pip-version-check --upgrade releasecmd setuptools
-	$(PYTHON) setup.py release --sign --skip-uploading --verbose
+	$(PYTHON) -m tox -e release
 	$(MAKE) clean
 
 .PHONY: setup-ci
