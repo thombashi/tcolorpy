@@ -1,34 +1,56 @@
-<a name="v0.1.6"></a>
-# [v0.1.6](https://github.com/thombashi/tcolorpy/releases/tag/v0.1.6) - 27 Apr 2024
+<a id="v0.1.7"></a>
+# [v0.1.7](https://github.com/thombashi/tcolorpy/releases/tag/v0.1.7) - 2024-12-29
 
-* Fix the package release
+## What's Changed
+* Drop support for Python 3.7/3.8
+* Add support for Python 3.13
+* Fix README rendering on PyPI
+* Refactor type annotations
+* Update copyright years
+* Bump sigstore/gh-action-sigstore-python from 2.1.1 to 3.0.0 in the actions-dependencies group by [@dependabot](https://github.com/dependabot) in [#6](https://github.com/thombashi/tcolorpy/pull/6)
+
+
+**Full Changelog**: https://github.com/thombashi/tcolorpy/compare/v0.1.6...v0.1.7
+
+[Changes][v0.1.7]
+
+
+<a id="v0.1.6"></a>
+# [v0.1.6](https://github.com/thombashi/tcolorpy/releases/tag/v0.1.6) - 2024-04-27
+
+* Add a build and release workflow
 
 **Full Changelog**: https://github.com/thombashi/tcolorpy/compare/v0.1.5...v0.1.6
 
 [Changes][v0.1.6]
 
 
-<a name="v0.1.5"></a>
-# [v0.1.5](https://github.com/thombashi/tcolorpy/releases/tag/v0.1.5) - 27 Apr 2024
+<a id="v0.1.5"></a>
+# [v0.1.5](https://github.com/thombashi/tcolorpy/releases/tag/v0.1.5) - 2024-04-27
 
 ## What's Changed
-* Bump actions/setup-python from 4 to 5 in the actions-dependencies group by [@dependabot](https://github.com/dependabot) in https://github.com/thombashi/tcolorpy/pull/4
-* Update CI by [@thombashi](https://github.com/thombashi) in https://github.com/thombashi/tcolorpy/pull/5
+
+### Improvements
 * Add `__all__` to `__init__.py`
+* Update CI by [@thombashi](https://github.com/thombashi) in [#5](https://github.com/thombashi/tcolorpy/pull/5)
+
+### Other Changes
 * Add support for Python 3.12
 * Add CHANGELOG.md
+* Add Sigstore signatures to release assets
 * Modify to use `setuptools_scm` for package build
+* Bump actions/setup-python from 4 to 5 in the actions-dependencies group by [@dependabot](https://github.com/dependabot) in [#4](https://github.com/thombashi/tcolorpy/pull/4)
 
 ## New Contributors
-* [@dependabot](https://github.com/dependabot) made their first contribution in https://github.com/thombashi/tcolorpy/pull/4
+* [@dependabot](https://github.com/dependabot) made their first contribution in [#4](https://github.com/thombashi/tcolorpy/pull/4)
 
 **Full Changelog**: https://github.com/thombashi/tcolorpy/compare/v0.1.4...v0.1.5
 
 [Changes][v0.1.5]
 
 
-<a name="v0.1.4"></a>
-# [v0.1.4](https://github.com/thombashi/tcolorpy/releases/tag/v0.1.4) - 16 Sep 2023
+<a id="v0.1.4"></a>
+# [v0.1.4](https://github.com/thombashi/tcolorpy/releases/tag/v0.1.4) - 2023-09-16
 
 - Improve type annotations
 - Modify to use `pypa/build` for package build
@@ -40,8 +62,8 @@
 [Changes][v0.1.4]
 
 
-<a name="v0.1.3"></a>
-# [v0.1.3](https://github.com/thombashi/tcolorpy/releases/tag/v0.1.3) - 05 May 2023
+<a id="v0.1.3"></a>
+# [v0.1.3](https://github.com/thombashi/tcolorpy/releases/tag/v0.1.3) - 2023-05-05
 
 - Add support for Python 3.11
 - Drop support for Python 3.6
@@ -51,24 +73,24 @@
 [Changes][v0.1.3]
 
 
-<a name="v0.1.2"></a>
-# [v0.1.2](https://github.com/thombashi/tcolorpy/releases/tag/v0.1.2) - 26 Feb 2022
+<a id="v0.1.2"></a>
+# [v0.1.2](https://github.com/thombashi/tcolorpy/releases/tag/v0.1.2) - 2022-02-26
 
 ## What's Changed
-* Use extras in tox instead of self-referencing the package in deps by [@hroncok](https://github.com/hroncok) in https://github.com/thombashi/tcolorpy/pull/1
-* Removed shebang from __main__.py by [@hegjon](https://github.com/hegjon) in https://github.com/thombashi/tcolorpy/pull/3
+* Use extras in tox instead of self-referencing the package in deps by [@hroncok](https://github.com/hroncok) in [#1](https://github.com/thombashi/tcolorpy/pull/1)
+* Removed shebang from __main__.py by [@hegjon](https://github.com/hegjon) in [#3](https://github.com/thombashi/tcolorpy/pull/3)
 
 ## New Contributors
-* [@hroncok](https://github.com/hroncok) made their first contribution in https://github.com/thombashi/tcolorpy/pull/1
-* [@hegjon](https://github.com/hegjon) made their first contribution in https://github.com/thombashi/tcolorpy/pull/3
+* [@hroncok](https://github.com/hroncok) made their first contribution in [#1](https://github.com/thombashi/tcolorpy/pull/1)
+* [@hegjon](https://github.com/hegjon) made their first contribution in [#3](https://github.com/thombashi/tcolorpy/pull/3)
 
 **Full Changelog**: https://github.com/thombashi/tcolorpy/compare/v0.1.1...v0.1.2
 
 [Changes][v0.1.2]
 
 
-<a name="v0.1.0"></a>
-# [v0.1.0](https://github.com/thombashi/tcolorpy/releases/tag/v0.1.0) - 12 Jun 2021
+<a id="v0.1.0"></a>
+# [v0.1.0](https://github.com/thombashi/tcolorpy/releases/tag/v0.1.0) - 2021-06-12
 
 - Add `hsv` property to `Color` class
 - Drop support for Python 3.5
@@ -77,6 +99,7 @@
 [Changes][v0.1.0]
 
 
+[v0.1.7]: https://github.com/thombashi/tcolorpy/compare/v0.1.6...v0.1.7
 [v0.1.6]: https://github.com/thombashi/tcolorpy/compare/v0.1.5...v0.1.6
 [v0.1.5]: https://github.com/thombashi/tcolorpy/compare/v0.1.4...v0.1.5
 [v0.1.4]: https://github.com/thombashi/tcolorpy/compare/v0.1.3...v0.1.4
@@ -84,4 +107,4 @@
 [v0.1.2]: https://github.com/thombashi/tcolorpy/compare/v0.1.0...v0.1.2
 [v0.1.0]: https://github.com/thombashi/tcolorpy/tree/v0.1.0
 
-<!-- Generated by https://github.com/rhysd/changelog-from-release v3.7.2 -->
+<!-- Generated by https://github.com/rhysd/changelog-from-release v3.8.1 -->
